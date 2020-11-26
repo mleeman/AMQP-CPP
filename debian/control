@@ -3,28 +3,30 @@ Section: libs
 Priority: optional
 Maintainer: Marc Leeman <m.leeman@televic.com>
 Build-Depends: debhelper (>= 10),
-                cmake,
+                libssl-dev,
 Standards-Version: 4.3.0
-Vcs-Git: https://bitbucket.televic.com/scm/tra_fip/33.97.1601.git
-Vcs-Browser: https://bitbucket.televic.com/projects/TRA_FIP/repos/33.97.1601/browse
+Vcs-Git: https://github.com/mleeman/AMQP-CPP.git
+Vcs-Browser: https://github.com/mleeman/AMQP-CPP
 
-Package: libamqpcpp0
+Package: libamqpcpp4.3
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends}
-Description: Televic Logging
- This library provides a common amqpcpp infrastructure used in Televic
- Rail.
+Description: CPP RabbitMQ communication library
+ AMQP-CPP is a C++ library for communicating with a RabbitMQ message
+ broker. The library can be used to parse incoming data from a RabbitMQ
+ server, and to generate frames that can be sent to a RabbitMQ server.
 
 Package: libamqpcpp-dev
 Section: libdevel
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-         libtelevicamqpcpp0 (= ${binary:Version}),
-Description: Televic Logging Development Libraries
- This library provides a common amqpcpp infrastructure used in Televic
- Rail.
+         libamqpcpp4.3 (= ${binary:Version}),
+Description: CPP RabbitMQ communication library development files
+ AMQP-CPP is a C++ library for communicating with a RabbitMQ message
+ broker. The library can be used to parse incoming data from a RabbitMQ
+ server, and to generate frames that can be sent to a RabbitMQ server.
  .
  This package contains the header files and development files.
 
