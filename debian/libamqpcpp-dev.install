@@ -1,0 +1,5 @@
+usr/include/amqpcpp/
+# usr/lib/*/pkgconfig/*.pc
+usr/lib/*/*.so
+usr/lib/*/*.a
+usr/lib/*/*.a.*
