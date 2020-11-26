@@ -1,0 +1,30 @@
+Source: amqp-cpp
+Section: libs
+Priority: optional
+Maintainer: Marc Leeman <m.leeman@televic.com>
+Build-Depends: debhelper (>= 10),
+                cmake,
+Standards-Version: 4.3.0
+Vcs-Git: https://bitbucket.televic.com/scm/tra_fip/33.97.1601.git
+Vcs-Browser: https://bitbucket.televic.com/projects/TRA_FIP/repos/33.97.1601/browse
+
+Package: libamqpcpp0
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Description: Televic Logging
+ This library provides a common amqpcpp infrastructure used in Televic
+ Rail.
+
+Package: libamqpcpp-dev
+Section: libdevel
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         libtelevicamqpcpp0 (= ${binary:Version}),
+Description: Televic Logging Development Libraries
+ This library provides a common amqpcpp infrastructure used in Televic
+ Rail.
+ .
+ This package contains the header files and development files.
+

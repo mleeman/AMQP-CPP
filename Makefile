@@ -1,6 +1,7 @@
+MULTIARCH               := $(shell gcc -print-multiarch)
 PREFIX                  ?= /usr
 INCLUDE_DIR             = ${PREFIX}/include
-LIBRARY_DIR             = ${PREFIX}/lib
+LIBRARY_DIR             = ${PREFIX}/lib/${MULTIARCH}/
 export LIBRARY_NAME		= amqpcpp
 export SONAME			= 4.3
 export VERSION			= 4.3.24
