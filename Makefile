@@ -1,4 +1,7 @@
-DEB_HOST_MULTIARCH      ?= $(shell gcc -print-multiarch)
+ifeq ($(DEB_HOST_MULTIARCH),)
+  DEB_HOST_MULTIARCH      ?= $(shell gcc -print-multiarch)
+endif
+
 PREFIX                  ?= /usr
 INCLUDE_DIR             = ${PREFIX}/include
 LIBRARY_DIR             = ${PREFIX}/lib/${DEB_HOST_MULTIARCH}/
