@@ -1,4 +1,4 @@
-usr/include/amqpcpp/
+usr/include/
 amqpcpp.pc /usr/lib/x86_64-linux-gnu/pkgconfig/
 usr/lib/*/*.so
 usr/lib/*/*.a
