@@ -22,6 +22,7 @@ Section: libdevel
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
+         libssl-dev,
          libamqpcpp4.3 (= ${binary:Version}),
 Description: CPP RabbitMQ communication library development files
  AMQP-CPP is a C++ library for communicating with a RabbitMQ message
