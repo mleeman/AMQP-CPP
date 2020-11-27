@@ -1,3 +1,9 @@
+amqp-cpp (0.0.1~televic10+7) buster-televic-unstable; urgency=medium
+
+  * debian: dev depends on libssl-dev
+
+ -- Marc Leeman <m.leeman@televic.com>  Fri, 27 Nov 2020 10:18:37 +0100
+
 amqp-cpp (0.0.1~televic10+6) buster-televic-unstable; urgency=medium
 
   * debian: install top level header too
