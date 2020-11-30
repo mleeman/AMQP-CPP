@@ -23,7 +23,7 @@ EXECUTE_PROCESS(COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH OUTPUT_VARIABLE C
 
 # build options
 option(AMQP-CPP_BUILD_SHARED "Build shared library. If off, build will be static." ON)
-option(AMQP-CPP_LINUX_TCP "Build linux sockets implementation." OFF)
+option(AMQP-CPP_LINUX_TCP "Build linux sockets implementation." ON)
 option(AMQP-CPP_BUILD_EXAMPLES "Build amqpcpp examples" OFF)
 
 # ensure c++11 on all compilers
