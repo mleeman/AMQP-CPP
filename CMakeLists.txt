@@ -120,7 +120,8 @@ set(DEST_DIR "${CMAKE_INSTALL_PREFIX}")
 set(PRIVATE_LIBS "-llibamqpcc")
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/amqpcpp.pc.in"
                "${CMAKE_CURRENT_BINARY_DIR}/amqpcpp.pc" @ONLY)
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/amqpcpp.pc" DESTINATION lib/pkgconfig)
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/amqpcpp.pc"
+  DESTINATION lib/${CMAKE_ARCH_TRIPLET}/pkgconfig)
 
 # submodule support
 # ------------------------------------------------------------------------------------------------------
