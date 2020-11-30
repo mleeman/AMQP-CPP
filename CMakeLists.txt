@@ -19,8 +19,10 @@ set (VERSION_MINOR 3)
 set (VERSION_PATCH 9)
 set (SO_VERSION ${VERSION_MAJOR}.${VERSION_MINOR})
 
+EXECUTE_PROCESS(COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH OUTPUT_VARIABLE CMAKE_ARCH_TRIPLET OUTPUT_STRIP_TRAILING_WHITESPACE)
+
 # build options
-option(AMQP-CPP_BUILD_SHARED "Build shared library. If off, build will be static." OFF)
+option(AMQP-CPP_BUILD_SHARED "Build shared library. If off, build will be static." ON)
 option(AMQP-CPP_LINUX_TCP "Build linux sockets implementation." OFF)
 option(AMQP-CPP_BUILD_EXAMPLES "Build amqpcpp examples" OFF)
 
@@ -95,14 +97,14 @@ endif()
 if(AMQP-CPP_BUILD_SHARED)
     # copy shared lib and its static counter part
     install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Config
-            ARCHIVE DESTINATION lib
-            LIBRARY DESTINATION lib
-            RUNTIME DESTINATION lib
+      ARCHIVE DESTINATION lib/${CMAKE_ARCH_TRIPLET}
+      LIBRARY DESTINATION lib/${CMAKE_ARCH_TRIPLET}
+      RUNTIME DESTINATION lib/${CMAKE_ARCH_TRIPLET}
     )
 else()
     # copy static lib
     install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Config
-            ARCHIVE DESTINATION lib
+      ARCHIVE DESTINATION lib/${CMAKE_ARCH_TRIPLET}
     )
 endif()
 
