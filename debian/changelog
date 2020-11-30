@@ -1,3 +1,12 @@
+amqp-cpp (0.0.1~televic10+8) buster-televic-unstable; urgency=medium
+
+  * cmake: add arch triplet, shared lib
+  * debian: trigger cmake iso make
+  * debian: cmake build dependency
+  * debian: compile so default, no a
+
+ -- Marc Leeman <m.leeman@televic.com>  Mon, 30 Nov 2020 09:44:22 +0100
+
 amqp-cpp (0.0.1~televic10+7) buster-televic-unstable; urgency=medium
 
   * debian: dev depends on libssl-dev
