@@ -1,3 +1,9 @@
+amqp-cpp (0.0.2~televic11+1) bullseye-televic-unstable; urgency=medium
+
+  * development on bullseye
+
+ -- Marc Leeman <m.leeman@televic.com>  Thu, 04 Nov 2021 13:32:04 +0100
+
 amqp-cpp (0.0.1~televic10+10) buster-televic-unstable; urgency=medium
 
   * cmake: enable AMQP-CPP_LINU_TCP
