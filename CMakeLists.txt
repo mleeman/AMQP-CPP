@@ -16,14 +16,12 @@ cmake_minimum_required(VERSION 3.4 FATAL_ERROR)
 project(amqpcpp)
 set (VERSION_MAJOR 4)
 set (VERSION_MINOR 3)
-set (VERSION_PATCH 24)
+set (VERSION_PATCH 23)
 set (SO_VERSION ${VERSION_MAJOR}.${VERSION_MINOR})
 
-EXECUTE_PROCESS(COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH OUTPUT_VARIABLE CMAKE_ARCH_TRIPLET OUTPUT_STRIP_TRAILING_WHITESPACE)
-
 # build options
-option(AMQP-CPP_BUILD_SHARED "Build shared library. If off, build will be static." ON)
-option(AMQP-CPP_LINUX_TCP "Build linux sockets implementation." ON)
+option(AMQP-CPP_BUILD_SHARED "Build shared library. If off, build will be static." OFF)
+option(AMQP-CPP_LINUX_TCP "Build linux sockets implementation." OFF)
 option(AMQP-CPP_BUILD_EXAMPLES "Build amqpcpp examples" OFF)
 
 # ensure c++11 on all compilers
@@ -98,14 +96,14 @@ endif()
 if(AMQP-CPP_BUILD_SHARED)
     # copy shared lib and its static counter part
     install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Config
-      ARCHIVE DESTINATION lib/${CMAKE_ARCH_TRIPLET}
-      LIBRARY DESTINATION lib/${CMAKE_ARCH_TRIPLET}
-      RUNTIME DESTINATION lib/${CMAKE_ARCH_TRIPLET}
+            ARCHIVE DESTINATION lib
+            LIBRARY DESTINATION lib
+            RUNTIME DESTINATION lib
     )
 else()
     # copy static lib
     install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Config
-      ARCHIVE DESTINATION lib/${CMAKE_ARCH_TRIPLET}
+            ARCHIVE DESTINATION lib
     )
 endif()
 
@@ -121,8 +119,7 @@ set(DEST_DIR "${CMAKE_INSTALL_PREFIX}")
 set(PRIVATE_LIBS "-llibamqpcc")
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/amqpcpp.pc.in"
                "${CMAKE_CURRENT_BINARY_DIR}/amqpcpp.pc" @ONLY)
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/amqpcpp.pc"
-  DESTINATION lib/${CMAKE_ARCH_TRIPLET}/pkgconfig)
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/amqpcpp.pc" DESTINATION lib/pkgconfig)
 
 # submodule support
 # ------------------------------------------------------------------------------------------------------

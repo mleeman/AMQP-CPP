@@ -1,13 +1,9 @@
-ifeq ($(DEB_HOST_MULTIARCH),)
-  DEB_HOST_MULTIARCH      ?= $(shell gcc -print-multiarch)
-endif
-
 PREFIX                  ?= /usr
 INCLUDE_DIR             = ${PREFIX}/include
-LIBRARY_DIR             = ${PREFIX}/lib/${DEB_HOST_MULTIARCH}/
+LIBRARY_DIR             = ${PREFIX}/lib
 export LIBRARY_NAME		= amqpcpp
 export SONAME			= 4.3
-export VERSION			= 4.3.24
+export VERSION			= 4.3.23
 
 all:
 		$(MAKE) -C src all
