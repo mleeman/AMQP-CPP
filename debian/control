@@ -2,10 +2,10 @@ Source: amqp-cpp
 Section: libs
 Priority: optional
 Maintainer: Marc Leeman <m.leeman@televic.com>
-Build-Depends: debhelper (>= 10),
+Build-Depends: debhelper-compat (= 13),
                 libssl-dev,
                 cmake,
-Standards-Version: 4.3.0
+Standards-Version: 4.6.0
 Vcs-Git: https://github.com/mleeman/AMQP-CPP.git
 Vcs-Browser: https://github.com/mleeman/AMQP-CPP
 
