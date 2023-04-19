@@ -1,3 +1,9 @@
+amqp-cpp (4.3.23-1) UNRELEASED; urgency=medium
+
+  * New upstream release 4.3.23
+
+ -- Marc Leeman <m.leeman@televic.com>  Wed, 19 Apr 2023 10:42:56 +0200
+
 amqp-cpp (4.3.9-1~televic11+1) bullseye-televic-unstable; urgency=medium
 
   * development on bullseye
