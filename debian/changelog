@@ -1,3 +1,9 @@
+amqp-cpp (4.3.26-1~televic11+1) bullseye-televic-unstable; urgency=medium
+
+  * Build for mini-buildd televic
+
+ -- Marc Leeman <m.leeman@televic.com>  Tue, 18 Jul 2023 10:11:31 +0200
+
 amqp-cpp (4.3.26-1) unstable; urgency=medium
 
   * New upstream release 4.3.26
@@ -7,7 +13,6 @@ amqp-cpp (4.3.26-1) unstable; urgency=medium
 amqp-cpp (4.3.23-1) unstable; urgency=medium
 
   * New upstream release 4.3.23
-  * MINI_BUILDD_OPTION: auto-ports=bookworm-televic-unstable
 
  -- Marc Leeman <m.leeman@televic.com>  Wed, 19 Apr 2023 11:32:13 +0200
 
