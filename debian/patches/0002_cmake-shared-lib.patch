@@ -3,7 +3,7 @@ Index: amqp-cpp/CMakeLists.txt
 --- amqp-cpp.orig/CMakeLists.txt
 +++ amqp-cpp/CMakeLists.txt
 @@ -19,9 +19,11 @@ set (VERSION_MINOR 3)
- set (VERSION_PATCH 23)
+ set (VERSION_PATCH 26)
  set (SO_VERSION ${VERSION_MAJOR}.${VERSION_MINOR})
  
 +EXECUTE_PROCESS(COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH OUTPUT_VARIABLE CMAKE_ARCH_TRIPLET OUTPUT_STRIP_TRAILING_WHITESPACE)
@@ -15,8 +15,8 @@ Index: amqp-cpp/CMakeLists.txt
 +option(AMQP-CPP_LINUX_TCP "Build linux sockets implementation." ON)
  option(AMQP-CPP_BUILD_EXAMPLES "Build amqpcpp examples" OFF)
  
- # ensure c++11 on all compilers
-@@ -96,14 +98,14 @@ endif()
+ # pass version number to source files as macro
+@@ -98,14 +100,14 @@ endif()
  if(AMQP-CPP_BUILD_SHARED)
      # copy shared lib and its static counter part
      install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Config
@@ -35,7 +35,7 @@ Index: amqp-cpp/CMakeLists.txt
      )
  endif()
  
-@@ -112,14 +114,15 @@ install(DIRECTORY include/amqpcpp/ DESTI
+@@ -114,14 +116,15 @@ install(DIRECTORY include/amqpcpp/ DESTI
          FILES_MATCHING PATTERN "*.h")
  install(FILES include/amqpcpp.h DESTINATION include)
  
