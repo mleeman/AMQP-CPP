@@ -1,3 +1,10 @@
+amqp-cpp (4.3.26-1~televic11+2) bullseye-televic-unstable; urgency=medium
+
+  * d/copyright: rebuild after master fix
+  * MINI_BUILDD_OPTION: auto-ports=bookworm-televic-unstable
+
+ -- Marc Leeman <m.leeman@televic.com>  Thu, 20 Jul 2023 14:45:00 +0200
+
 amqp-cpp (4.3.26-1~televic11+1) bullseye-televic-unstable; urgency=medium
 
   * Build for mini-buildd televic
