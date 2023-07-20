@@ -1,3 +1,17 @@
-Copyright (C) 2019 Televic <http://www.televic.com/>
+This package was debianized by Marc Leeman
+<m.leeman@televic.com> on Fri, 18 Oct 2019 13:46:27 +0200
 
-License: Proprietary
+It was downloaded from <https://github.com/CopernicaMarketingSoftware/AMQP-CPP>
+
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: AMQP-CPP
+Upstream-Contact: https://github.com/CopernicaMarketingSoftware/AMQP-CPP/wiki
+Source: https://github.com/CopernicaMarketingSoftware/AMQP-CPP
+
+Files: *
+Copyright: 2019-2023 Copernica <https://www.copernica.com/>
+License: Apache-2.0
+
+Files: debian/*
+Copyright: 2023, Televic <http://www.televic.com/>
+License: GPL-2+
