@@ -1,7 +1,7 @@
 Source: amqp-cpp
 Section: libs
 Priority: optional
-Maintainer: Marc Leeman <m.leeman@televic.com>
+Maintainer: Marc Leeman <marc.leeman@gmail.com>
 Build-Depends: debhelper-compat (= 13),
                 libssl-dev,
                 cmake,
