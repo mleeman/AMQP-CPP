@@ -1,3 +1,8 @@
+Description: add multiarch support
+  Patch in multi-arch locations in Makefile
+Author: Marc Leeman
+Last-Update: 2024-04-04
+
 Index: amqp-cpp/Makefile
 ===================================================================
 --- amqp-cpp.orig/Makefile
@@ -16,7 +21,7 @@ Index: amqp-cpp/Makefile
  export VERSION			= 4.3.26
 @@ -24,14 +28,14 @@ clean:
  		$(MAKE) -C src clean
- 
+
  install:
 -		mkdir -p ${INCLUDE_DIR}/$(LIBRARY_NAME)
 -		mkdir -p ${INCLUDE_DIR}/$(LIBRARY_NAME)/linux_tcp
