@@ -5,7 +5,7 @@ Maintainer: Marc Leeman <marc.leeman@gmail.com>
 Build-Depends: debhelper-compat (= 13),
                 libssl-dev,
                 cmake,
-Standards-Version: 4.6.0
+Standards-Version: 4.6.2
 Vcs-Git: https://salsa.debian.org/televic-team/amqp-cpp.git
 Vcs-Browser: https://salsa.debian.org/televic-team/amqp-cpp
 
