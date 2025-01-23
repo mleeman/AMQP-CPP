@@ -1,16 +1,11 @@
-Description: build shared library
- Build shared libraries by default
-Author: Marc Leeman
-Last-Update: 2024-04-04
-
 Index: amqp-cpp/CMakeLists.txt
 ===================================================================
 --- amqp-cpp.orig/CMakeLists.txt
 +++ amqp-cpp/CMakeLists.txt
 @@ -19,9 +19,11 @@ set (VERSION_MINOR 3)
- set (VERSION_PATCH 26)
+ set (VERSION_PATCH 27)
  set (SO_VERSION ${VERSION_MAJOR}.${VERSION_MINOR})
-
+ 
 +EXECUTE_PROCESS(COMMAND dpkg-architecture -qDEB_HOST_MULTIARCH OUTPUT_VARIABLE CMAKE_ARCH_TRIPLET OUTPUT_STRIP_TRAILING_WHITESPACE)
 +
  # build options
@@ -19,42 +14,15 @@ Index: amqp-cpp/CMakeLists.txt
 +option(AMQP-CPP_BUILD_SHARED "Build shared library. If off, build will be static." ON)
 +option(AMQP-CPP_LINUX_TCP "Build linux sockets implementation." ON)
  option(AMQP-CPP_BUILD_EXAMPLES "Build amqpcpp examples" OFF)
-
+ 
  # pass version number to source files as macro
-@@ -98,14 +100,14 @@ endif()
- if(AMQP-CPP_BUILD_SHARED)
-     # copy shared lib and its static counter part
-     install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Config
--            ARCHIVE DESTINATION lib
--            LIBRARY DESTINATION lib
--            RUNTIME DESTINATION lib
-+            ARCHIVE DESTINATION lib/${CMAKE_ARCH_TRIPLET}
-+            LIBRARY DESTINATION lib/${CMAKE_ARCH_TRIPLET}
-+            RUNTIME DESTINATION lib/${CMAKE_ARCH_TRIPLET}
-     )
- else()
-     # copy static lib
-     install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Config
--            ARCHIVE DESTINATION lib
-+            ARCHIVE DESTINATION lib/${CMAKE_ARCH_TRIPLET}
-     )
- endif()
-
-@@ -114,14 +116,15 @@ install(DIRECTORY include/amqpcpp/ DESTI
+@@ -115,7 +117,8 @@ install(DIRECTORY include/amqpcpp/ DESTI
          FILES_MATCHING PATTERN "*.h")
- install(FILES include/amqpcpp.h DESTINATION include)
-
+ install(FILES include/amqpcpp.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+ 
 -install(EXPORT ${PROJECT_NAME}Config DESTINATION cmake)
 +install(EXPORT ${PROJECT_NAME}Config DESTINATION
 +  ${CMAKE_INSTALL_LIBDIR}/cmake/amqpcpp)
  export(TARGETS ${PROJECT_NAME} FILE ${PROJECT_NAME}Config.cmake)
-
+ 
  set(DEST_DIR "${CMAKE_INSTALL_PREFIX}")
- set(PRIVATE_LIBS "-llibamqpcc")
- configure_file("${CMAKE_CURRENT_SOURCE_DIR}/amqpcpp.pc.in"
-                "${CMAKE_CURRENT_BINARY_DIR}/amqpcpp.pc" @ONLY)
--install(FILES "${CMAKE_CURRENT_BINARY_DIR}/amqpcpp.pc" DESTINATION lib/pkgconfig)
-+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/amqpcpp.pc" DESTINATION lib/${CMAKE_ARCH_TRIPLET}/pkgconfig)
-
- # submodule support
- # ------------------------------------------------------------------------------------------------------

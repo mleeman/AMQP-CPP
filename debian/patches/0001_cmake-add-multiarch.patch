@@ -18,10 +18,10 @@ Index: amqp-cpp/Makefile
 +LIBRARY_DIR             = ${PREFIX}/lib/${DEB_HOST_MULTIARCH}/
  export LIBRARY_NAME		= amqpcpp
  export SONAME			= 4.3
- export VERSION			= 4.3.26
+ export VERSION			= 4.3.27
 @@ -24,14 +28,14 @@ clean:
  		$(MAKE) -C src clean
-
+ 
  install:
 -		mkdir -p ${INCLUDE_DIR}/$(LIBRARY_NAME)
 -		mkdir -p ${INCLUDE_DIR}/$(LIBRARY_NAME)/linux_tcp
