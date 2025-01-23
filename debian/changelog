@@ -1,3 +1,11 @@
+amqp-cpp (4.3.27-1~televic12+1) bookworm-televic-unstable; urgency=medium
+
+  * d/copyright: add Apache-2.0 pre-amble
+  * d/patches: refresh patches
+  * d/control: add Marc as Uploader
+
+ -- Marc Leeman <m.leeman@televic.com>  Thu, 23 Jan 2025 13:44:41 +0100
+
 amqp-cpp (4.3.27-1) unstable; urgency=medium
 
   * Initial release (Closes: #1053498)
