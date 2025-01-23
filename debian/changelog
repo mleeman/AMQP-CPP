@@ -1,8 +1,5 @@
-amqp-cpp (4.3.26-1) unstable; urgency=medium
+amqp-cpp (4.3.27-1) unstable; urgency=medium
 
   * Initial release (Closes: #1053498)
-  * New upstream release 4.3.26
-  * d/patches: add DEP-3 headers
-  * d/rules: add hardening
 
- -- Marc Leeman <marc.leeman@gmail.com>  Thu, 04 Apr 2024 12:03:41 +0200
+ -- Marc Leeman <marc.leeman@gmail.com>  Thu, 23 Jan 2025 11:17:27 +0100
